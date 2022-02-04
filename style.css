@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300&display=swap');
+
+:root {
+  --colour1: #f3e9d2;
+  --colour2: #88d498;
+  --colour3: #1a936f;
+  --colour4: #114b5f;
+  --greyColour1: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--colour1);
+  font-family: 'Merriweather', serif;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+header {
+  font-size: 32px;
+  margin-top: 10px;
+  letter-spacing: 5px;
+}
+
+.container--books {
+  margin: 40px 15px;
+  width: 90%;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  padding: 20px;
+  transform-origin: top right;
+  transform: skewY(-4.398705355deg);
+}
+
+.container--book {
+  display: grid;
+  height: 400px;
+  grid-template-rows: repeat(4, 1fr);
+
+  box-shadow: 33px 33px 8px -4px rgba(0, 0, 0, 0.74);
+
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  transform-origin: top left;
+  transform: skewY(4.398705355deg) rotatez(14.03624deg);
+}
+
+.container--book:hover {
+  z-index: 4;
+}
+
+.book {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  box-shadow: inset 0px 0px 0px 7vw #fcf8f4;
+
+  filter: drop-shadow(2px 6px 3px rgba(0, 0, 0, 0.4));
+  transform: rotate(0deg) translate(0, 0);
+  transition-property: transform;
+  transition-duration: 0.3s;
+  overflow: hidden;
+}
+.book::before {
+  content: url('./book-outline.svg');
+
+  font-size: 10px;
+  opacity: 0.05;
+}
+.book:hover {
+  transform: rotate(-14.03624deg) translate(5.5%, 15%) scale(1.3);
+}
+
+.title,
+.author,
+.genre,
+.check {
+  position: absolute;
+  z-index: 4;
+  left: 5%;
+
+  padding: 3px;
+}
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+  top: 9%;
+}
+
+.author {
+  font-style: oblique;
+  top: 30%;
+}
+
+.genre {
+  bottom: 30%;
+}
+
+.check {
+  bottom: 10%;
+}
+
+.btn--delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: inherit;
+  width: 20%;
+
+  border: none;
+  top: 1%;
+  right: 1%;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.btn--delete object {
+  cursor: pointer;
+}
+.btn--delete:hover {
+  transform: translateY(3px);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Adding a book button */
+#newBookBtn--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+#newBookBtn {
+  position: fixed;
+  bottom: 5%;
+  right: 1%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  font-size: 25px;
+  border-radius: 10px;
+  border: solid 3px black;
+}
+
+/* Modal popup box  https://www.w3schools.com/howto/howto_css_modals.asp */
+
+/* The Modal (background) */
+
+#modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  font-size: 30px;
+}
+
+/* Modal Content/Box */
+#form {
+  position: relative;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 15%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Modal Buttons */
+button:focus {
+  outline: 0;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 20px;
+  height: 35px;
+  width: 110px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: solid 3px black;
+}

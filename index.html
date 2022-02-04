@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer src="scriptjs.js"></script>
+    <title>Starter</title>
+  </head>
+  <body>
+    <header>QualityPre Library</header>
+
+    <div class="container--books"></div>
+
+    <div id="newBookBtn--container">
+      <button id="newBookBtn">Add New Book</button>
+    </div>
+    <div id="modal">
+      <form id="form">
+        <span class="close">&times;</span>
+
+        <div id="textInput">
+          <p>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Title"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              type="text"
+              id="author"
+              name="author"
+              placeholder="Author"
+              autocomplete="off"
+              required
+            />
+          </p>
+          <p>
+            <input
+              type="text"
+              id="genre"
+              name="genre"
+              placeholder="Genre"
+              autocomplete="off"
+            />
+          </p>
+        </div>
+        <div id="checkBox">
+          <p>
+            <label>Read: </label
+            ><input type="checkbox" id="read" name="read" value="true" />
+          </p>
+        </div>
+        <button class="btn" type="reset">Reset</button>
+        <button class="btn btn-submit" type="submit" form="form">Add</button>
+      </form>
+    </div>
+  </body>
+</html>
